@@ -1,1 +1,287 @@
+<!DOCTYPE html>
+<html>
+  <head></title>
+    <style>
+      /* Add custom styles here */
+      body {
+        background-image: linear-gradient(#00000098, #00000090), url('');
+        background-size: cover;
+        width: 100%;
+        height: 100vh;
+      }
+      .logo {
+        width: 100px;
+        height: 100px;
+        background-image: url('logo-url');
+        background-size: cover;
+      }
+      .button-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 150px;
+      }
+      .button {
+        padding: 10px 20px;
+        margin: 10px;
+        background-color: #028f8f;
+        background: transparent;
+        text-transform: uppercase;
+        color: white;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+      }
+      .button span {
+        background: #019f90;
+        height: 100%;
+        width: 0%;
+        border-radius: 25px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: -1;
+        transition: 0.5s;
+      }
+      .button:hover span {
+        width: 100%;
+      }
+      .button:hover {
+        border: none;
+      }
+      /* Add custom styles for navigation bar */
+      .navbar {
+        overflow: hidden;
+        background-color: transparent;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+      .navbar a {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        position: relative;
+      }
+      .navbar a:hover {
+        color: #008080;
+      }
+      .navbar a:hover:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #008080;
+        visibility: visible;
+        transform: scaleX(1);
+        transition: all 0.3s ease-in-out 0s;
+      }
+      .navbar a:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #ddd;
+        visibility: hidden;
+        transform: scaleX(0);
+        transition: all 0.3s ease-in-out 0s;
+      }
+      .active {
+        background-color: #008080;
+        color: white;
+      }
+      /* Add custom styles for the display text */
+      #displayText {
+        text-align: center;
+        color: hwb(0 100% 0% / 0.8);
+        font-size: 2rem;
+        display: none;
+        padding: 10px;
+        border: 1px solid rgba(255, 255, 255, 0);
+        width: 50%;
+        margin: 0 auto;
+        margin-top: 150px;
+}
+      #title {
+        color: hwb(0 100% 0% / 0.8);
+        text-align: center;
+      }
+      h1, h2, h3, h4, h5, h6, p, span {
+        text-align: center;
+      }
+      .smaller-text {
+        font-size: 1.5rem;
+      }
+      /* Scale down content by default */
+      body {
+        transform: scale(0.8);
+      }
 
+      /* Scale up content over 2 seconds */
+    body.loaded {
+      transform: scale(1);
+      transition: transform 2s ease-in-out;
+    }
+    .button {
+      padding: 10px 20px;
+        margin: 10px;
+        background-color: #028f8f;
+        background: transparent;
+        text-transform: uppercase;
+        color: white;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        z-index: 1
+    }
+    
+
+    .teal-blue {
+      background-color: teal;
+    }
+
+    .black {
+      background-color: black;
+    }
+    :root {
+      --theme-color: #008080;
+    }
+
+    body {
+      background-color: var(--theme-color);
+      color: white;
+    }
+    #name-form {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      text-align: right;
+      z-index: 1;
+    }
+
+    #name-input {
+      width: 150px;
+    }
+
+
+
+  
+    </style>
+  </head>
+  <body>
+    <form id="name-form">
+      <label for="name-input">Enter your name:</label>
+      <input type="text" id="name-input" name="name">
+      <button type="submit">Submit</button>
+    </form>
+    
+
+    
+    <div id="loader-container">
+      <div id="loader"></div>
+    </div>
+    <div class="navbar">
+      <a class="active" href="#">Home</a>
+    </div>
+    <div class="logo"></div>
+    <h1 id="title">Cyber Security A Thereat to Society</h1>
+    <div class="button-container">
+      <button class="button" onclick="displayText1()"><span></span>Introduction</button>
+      <button class="button" onclick="displayText2()"><span></span>Current Applications</button>
+      <button class="button" onclick="displayText3()"><span></span>Solving Real-World Problems</button>
+      <button class="button" onclick="displayText4()"><span></span>Inpact on society </button>
+      <button class="button" onclick="displayText5()"><span></span>Executive Summary </button>
+      
+    </div>
+    <p id="displayText"></p>
+    <button id="button1" class="button">Light</button>
+    <button id="button2" class="button">Dark</button>
+    
+    
+
+    <script>
+      function displayText1() {
+        var displayText = document.getElementById("displayText");
+        displayText.innerHTML = "In today's culture, cybersecurity has arisen as a crucial concern. With the rapid advancement of technology, the risk of cyber-attacks has increased, and the consequences of such attacks may be serious. Cybersecurity threats may hurt individuals, businesses, and even governments. In this presentation, we will examine how cybersecurity poses a threat to society and how it affects many aspects of our daily lives.";
+        displayText.classList.add("smaller-text");
+        displayText.style.display = "block";
+      }
+    
+      function displayText2() {
+        var displayText = document.getElementById("displayText");
+        displayText.innerHTML = "Examining current applications and real-world examples further supports the notion that cyber security poses a significant threat to society. Notably, recent high-profile cyber-attacks have garnered widespread attention and demonstrated the potential consequences of inadequate security measures (Mahler, A., Schorer, T., Holz, T., & Biersack, E, 2020).";
+        displayText.classList.add("smaller-text");
+        displayText.style.display = "block";
+      }
+    
+      function displayText3() {
+        var displayText = document.getElementById("displayText");
+        displayText.innerHTML = "TA multifaceted approach is necessary to address the real-world problems posed by cyber security threats. Firstly, governments, organizations, and individuals must prioritize cyber security and allocate sufficient resources to protect against cyber-attacks (Schmitt, M. N. (Ed.), 2017). This includes investing in robust infrastructure to secure networks and systems, such as firewalls, intrusion detection systems, and encryption technologies.";
+        displayText.classList.add("smaller-text");
+        displayText.style.display = "block";
+      }
+      function displayText4() {
+        var displayText = document.getElementById("displayText");
+        displayText.innerHTML = "Cybersecurity threats can impact various aspects of society. These threats can affect individuals, businesses, and even governments. As a result of cybercrime, people may lose personal information, experience financial losses, and have their reputations harmed. Personal data, such as credit card numbers, social security numbers, and other sensitive information, can be stolen and used fraudulently by hackers (upguard, 2023).";
+        displayText.classList.add("smaller-text");
+        displayText.style.display = "block";
+      }
+      function displayText5() {
+        var displayText = document.getElementById("displayText");
+        displayText.innerHTML = "Cyber security is a pressing concern in today's interconnected world, as cyber attacks' increasing frequency and sophistication pose significant threats to society. This report critically evaluates cyber security as a threat to society by reviewing the current state-of-the-art literature and examining relevant applications. The literature analysis highlights the severity of cyber threats, their potential consequences, and the challenges faced in combating them. The findings from the literature review align with the views presented in a previous assignment, reinforcing the claim that cyber security is indeed a threat to society. Furthermore, examining current applications supports this perspective, emphasizing the risks posed by advanced persistent threats, ransomware attacks, and vulnerabilities in IoT devices. ";
+        displayText.classList.add("smaller-text");
+        displayText.style.display = "block";
+      }
+      window.addEventListener("load", function() {
+        document.body.classList.add("loaded");
+      })
+        
+    </script>
+    <script>
+      const button1 = document.getElementById("button1");
+      const button2 = document.getElementById("button2");
+      const root = document.documentElement;
+
+      button1.addEventListener("click", function() {
+        root.style.setProperty('--theme-color', 'teal');
+        button1.classList.toggle("teal-blue");
+      });
+
+      button2.addEventListener("click", function() {
+        root.style.setProperty('--theme-color', 'black');
+        button2.classList.toggle("black");
+      });
+
+    </script>
+    <script>
+    window.addEventListener("load", function() {
+    document.title = "Hi";
+  });
+
+  const nameForm = document.getElementById("name-form");
+  const nameInput = document.getElementById("name-input");
+
+  nameForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+    const userName = nameInput.value;
+    document.title = `Hello, ${userName}`;
+  });;
+
+
+      </script>
+   
+  </body>
+</html>
